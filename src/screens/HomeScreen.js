@@ -1,17 +1,24 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { Text, StyleSheet, View, Button } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const HomeScreen = ({ navigation }) => {
-  return (
-    <View>
-      <Text style={{ fontSize: 30 }}>HomeScreen</Text>
-      <Button title="Layout" onPress={() => navigation.navigate('Layout')} />
-    </View>
-  );
+const HomeScreen = () => {
+  return <View>
+    <Text style={styles.text}>Hi There!</Text>
+    <Button
+      onPress={() => console.log('Button PRessed')}
+      title="Go to Components Demo"
+    />
+    <TouchableOpacity onPress={() => console.log('Button PRessed')}>
+      <Text>Go to List Demo</Text>
+    </TouchableOpacity>
+  </View>
 };
 
-HomeScreen.navigationOptions = {
-  title: 'Home'
-};
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 30
+  }
+});
 
 export default HomeScreen;
